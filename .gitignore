@@ -1,10 +1,11 @@
 airflow_env/
 logs/
-airflow-webserver.pid
-airflow.cfg
 airflow.db
-webserver_config.py
-dags/__pycache__/etl.airflow.cpython-311.pyc
+airflow-webserver.pid
+
 __pycache__/
-logs/dag_processor_manager/dag_processor_manager.log
-logs/scheduler/2025-07-14/etl.airflow.py.log
+*.pyc
+
+.DS_Store
+
+.env
