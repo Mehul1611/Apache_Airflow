@@ -54,7 +54,7 @@ class ELTLogic():
         return 20
 
     def run_dag(self):
-        with DAG("example_py_operator1", default_args=self.def_args, catchup=False) as dag:
+        with DAG("xcom_demo", default_args=self.def_args, catchup=False) as dag:
             start = EmptyOperator(task_id= "START")
             ext = PythonOperator(
                 task_id="EXTRACT",
