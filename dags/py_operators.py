@@ -47,11 +47,11 @@ class ELTLogic():
             load = PythonOperator(
                 task_id="Load",
                 python_callable=self.load_function,
-                op_args=[1234567890, 9876543210],       # ------> Way 1 (to pass the parameters in the same sequence)
-                # op_kwargs={
-                #     "num1":"Negative number",
-                #     "num2":"Positive number"            # ------> Way 2 (Key-Value pair mapping)
-                # }
+                # op_args=[1234567890, 9876543210],       # ------> Way 1 (to pass the parameters in the same sequence)
+                op_kwargs={
+                    "num1":"Negative number",
+                    "num2":"Positive number"            # ------> Way 2 (Key-Value pair mapping)
+                }
             )
 
             end = EmptyOperator(task_id= "END")
