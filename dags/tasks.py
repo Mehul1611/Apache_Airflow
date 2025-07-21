@@ -3,7 +3,7 @@ from airflow import DAG
 from airflow.operators.empty import EmptyOperator
 from airflow.utils.task_group import TaskGroup
 
-with DAG("TaskScheduler", default_args={"owner": "airflow", "start_date": datetime(2025, 6, 21)}) as dag:
+with DAG("TaskScheduler", default_args={"owner": "airflow", "start_date": datetime(2025, 7, 21)}) as dag:
     
     start=EmptyOperator(task_id="START")
     # a=EmptyOperator(task_id="TASK_A")

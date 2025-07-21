@@ -23,7 +23,7 @@ from datetime import datetime   ### date from which the dag should execute
 ## Basic DAG parameters:
 def_args={
     "owner": "airflow",
-    "start_date": datetime(2025, 6, 14)
+    "start_date": datetime(2025, 7, 14)
 }
 
 

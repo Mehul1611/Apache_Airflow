@@ -9,7 +9,7 @@ from datetime import datetime
 def run_dag():
         def_args={
             "owner": "airflow",
-            "start_date": datetime(2025, 6, 16)
+            "start_date": datetime(2025, 7, 16)
         }
         pg_hook=Hooks()
         with DAG("PgHook_dag", default_args=def_args, catchup=False) as dag:
