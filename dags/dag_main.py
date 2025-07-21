@@ -3,7 +3,7 @@ from airflow.operators.bash import BashOperator
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import PythonOperator
 # from utils.plugin_connection import use_postgres_connection, ensure_postgres_connection
-from fetch_data import Hooks
+from hooks.update_data import Hooks
 from datetime import datetime
 
 def run_dag():
