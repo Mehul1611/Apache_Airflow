@@ -286,6 +286,19 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
+  # test_db:
+  #   image: postgres:16
+  #   container_name: test_db
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: test_user
+  #     POSTGRES_PASSWORD: test_pass
+  #     POSTGRES_DB: test_db
+  #   volumes:
+  #     - test_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5433:5432"
 
 volumes:
+  # test_data:
   postgres-db-volume:
