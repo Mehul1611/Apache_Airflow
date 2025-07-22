@@ -6,7 +6,7 @@ from airflow.models import Variable
 
 xyz = Variable.get("AWS_SECRET_KEY")
 json_obj = Variable.get("DB_CONN_VARS")
-dict_obj = Variable.get("DB_CONN_VARS", deserialize_json=True)    ### Must be done to convert the json obj to python dict
+dict_obj = Variable.get("DB_CONN_VARS", deserialize_json=True)    ### Must be done to convert the json obj to python dict or str to its default dtype.
 pwd = Variable.get("DB_PASSWORD")
 
 def print_airflow_variables():
