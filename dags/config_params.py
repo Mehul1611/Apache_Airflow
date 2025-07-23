@@ -1,4 +1,4 @@
-from datetime import datetime as dtime
+from datetime import datetime
 from airflow import DAG
 from airflow.operators.empty import EmptyOperator
 from airflow.operators.python import PythonOperator, get_current_context
@@ -11,7 +11,7 @@ def get_config_params(**kwargs):
         logical_date = kwargs["logical_date"]
         # {"custom_parameter": "These are custom runtime configuration parameter that we pass manually when triggering a DAG run"}
         custom_param = kwargs["dag_run"].conf.get("custom_parameter")
-        todays_date = dtime.now().date()
+        todays_date = datetime.now().date()
 
         if logical_date.date() == todays_date:
             print("Normal Execution")
@@ -26,7 +26,7 @@ def get_config_params(**kwargs):
 def_args = {
     "owner": "airflow",
     "retries": 0,
-    "start_date": dtime(2021, 1, 1)
+    "start_date": datetime(2021, 1, 1)
 }
 
 with DAG("ex_dag_config_params", default_args=def_args, catchup=False) as dag:
